@@ -1,0 +1,76 @@
+*{
+    color:white;
+    background-size: cover;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+}
+
+.my-hover:hover {
+
+    color: #FFCB04 !important;
+}
+.border-hover:hover {
+    border-color: #FFCB04 !important;
+}
+
+.cus-color {
+    color: #ffcb04 !important;
+}
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #ffcb04 !important;
+}
+.cus-bg {
+    background-color: #FFCB04 !important;
+}
+.cus-text-black {
+
+    color: black;
+}
+input::placeholder {
+    font-weight: 500;
+    color: rgb(151, 151, 151);
+
+}
+nav * {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1;
+    color: white;
+
+}
+.cus-card{
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.login {
+    width: 12vw;
+    min-width: 95px;
+}
+
+.register {
+    min-width: 250px;
+}
+footer{
+    background-color: black;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+

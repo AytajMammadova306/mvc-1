@@ -1,0 +1,6 @@
+wwwroot\assets\css\details.css
+wwwroot\assets\css\search.css
+wwwroot\assets\css\style.css
+wwwroot\assets\js\details.js
+wwwroot\assets\js\main.js
+wwwroot\assets\js\search.js

@@ -1,0 +1,46 @@
+* {
+    color: white;
+    background-color: black;
+}
+
+.my-hover:hover {
+
+    color: #FFCB04 !important;
+}
+
+.cus-color {
+    color: #ffcb04 !important;
+}
+
+.border-hover:hover {
+    border-color: #FFCB04 !important;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #ffcb04 !important;
+}
+.cus-bg {
+    background-color: #FFCB04 !important;
+}
+
+.cus-text-black {
+
+    color: black;
+}
+
+input::placeholder {
+    font-weight: 500;
+    color: rgb(151, 151, 151);
+
+}
+
+.login {
+    width: 12vw;
+    min-width: 95px;
+}
+
+.register {
+    min-width: 250px;
+}

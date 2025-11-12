@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("exxen-front-to-back")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3093721448747fed5ea1348a66b75a806e9c3b1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("exxen-front-to-back")]
 [assembly: System.Reflection.AssemblyTitleAttribute("exxen-front-to-back")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

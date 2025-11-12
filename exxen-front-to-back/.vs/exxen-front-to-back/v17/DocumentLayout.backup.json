@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\academy\\HW\\exxen-front-to-back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|c:\\users\\user\\desktop\\academy\\hw\\exxen-front-to-back\\exxen-front-to-back\\views\\shared\\_layout1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|solutionrelative:exxen-front-to-back\\views\\shared\\_layout1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|c:\\users\\user\\desktop\\academy\\hw\\exxen-front-to-back\\exxen-front-to-back\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|solutionrelative:exxen-front-to-back\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|c:\\users\\user\\desktop\\academy\\hw\\exxen-front-to-back\\exxen-front-to-back\\views\\shared\\_layout1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|solutionrelative:exxen-front-to-back\\views\\shared\\_layout1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{914EF613-B957-4087-AE8F-D76DF47D20EB}|exxen-front-to-back\\exxen-front-to-back.csproj|c:\\users\\user\\desktop\\academy\\hw\\exxen-front-to-back\\exxen-front-to-back\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,20 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_Layout1.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\exxen-front-to-back\\exxen-front-to-back\\Views\\Shared\\_Layout1.cshtml",
               "RelativeDocumentMoniker": "exxen-front-to-back\\Views\\Shared\\_Layout1.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\academy\\HW\\exxen-front-to-back\\exxen-front-to-back\\Views\\Shared\\_Layout1.cshtml",
               "RelativeToolTip": "exxen-front-to-back\\Views\\Shared\\_Layout1.cshtml",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAswBIBAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAAAJAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-12T11:12:57.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Search.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\exxen-front-to-back\\exxen-front-to-back\\Views\\Home\\Search.cshtml",
               "RelativeDocumentMoniker": "exxen-front-to-back\\Views\\Home\\Search.cshtml",

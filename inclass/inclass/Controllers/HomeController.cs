@@ -2,6 +2,7 @@
 using inclass.Models;
 using inclass.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace inclass.Controllers
 {
@@ -16,7 +17,8 @@ namespace inclass.Controllers
         {
             HomeVM homeVM = new HomeVM
             {
-                Slides =_context.Slides.OrderBy(s=>s.Order).Take(3).ToList()
+                Slides = _context.Slides.OrderBy(s => s.Order).Take(3).ToList(),
+                Products = _context.Products.Include(p => p.ProductImages).ToList()
             };
 
             return View(homeVM);

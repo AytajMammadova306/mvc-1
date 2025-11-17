@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("inclass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac9ace9a7366c9da081129d91d5dd8bbd33178d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("inclass")]
 [assembly: System.Reflection.AssemblyTitleAttribute("inclass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

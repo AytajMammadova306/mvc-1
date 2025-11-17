@@ -4012,11 +4012,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\academy\\CLASS\\inclass\\inclass\\inclass.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\inclass.csproj",
       "projectName": "inclass",
-      "projectPath": "C:\\Users\\User\\Desktop\\academy\\CLASS\\inclass\\inclass\\inclass.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\inclass.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\academy\\CLASS\\inclass\\inclass\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

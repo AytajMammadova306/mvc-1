@@ -44,6 +44,7 @@ wwwroot\assets\image\bg-images\home-slider-1-ai.png
 wwwroot\assets\image\bg-images\home-slider-1.jpg
 wwwroot\assets\image\bg-images\home-slider-2-ai.png
 wwwroot\assets\image\bg-images\home-slider-2.jpg
+wwwroot\assets\image\bg-images\home-slider-3-ai.png
 wwwroot\assets\image\bg-images\promo-banner-contained-WT.jpg
 wwwroot\assets\image\bg-images\promo-banner-contained.jpg
 wwwroot\assets\image\bg-images\promo-banner-full.jpg
@@ -178,4 +179,3 @@ wwwroot\assets\scss\sections\_layout.scss
 wwwroot\assets\scss\sections\_sidebar.scss
 wwwroot\assets\scss\sections\_testimonial.scss
 wwwroot\assets\scss\sections\_welcome.scss
-wwwroot\assets\image\bg-images\home-slider-3-ai.png

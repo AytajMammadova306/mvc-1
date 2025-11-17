@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +35,8 @@
       "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\models\\slide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|solutionrelative:inclass\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83156EAC-65CA-4622-879A-FD574DC6C156}|inclass\\inclass.csproj|c:\\users\\user\\desktop\\academy\\hw\\hw1-mvc\\inclass\\inclass\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -98,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ProductImage.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Models\\ProductImage.cs",
               "RelativeDocumentMoniker": "inclass\\Models\\ProductImage.cs",
@@ -114,12 +114,11 @@
               "RelativeToolTip": "inclass\\Models\\ProductImage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T12:36:12.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T12:36:12.404Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Models\\Category.cs",
               "RelativeDocumentMoniker": "inclass\\Models\\Category.cs",
@@ -127,12 +126,11 @@
               "RelativeToolTip": "inclass\\Models\\Category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T12:24:51.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T12:24:51.338Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Models\\Product.cs",
               "RelativeDocumentMoniker": "inclass\\Models\\Product.cs",
@@ -140,24 +138,23 @@
               "RelativeToolTip": "inclass\\Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T12:19:38.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T12:19:38.543Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "HomeVM.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\ViewModels\\HomeVM.cs",
               "RelativeDocumentMoniker": "inclass\\ViewModels\\HomeVM.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\ViewModels\\HomeVM.cs",
               "RelativeToolTip": "inclass\\ViewModels\\HomeVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T10:17:04.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\DAL\\AppDbContext.cs",
               "RelativeDocumentMoniker": "inclass\\DAL\\AppDbContext.cs",
@@ -165,12 +162,11 @@
               "RelativeToolTip": "inclass\\DAL\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T09:54:36.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T09:54:36.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Slide.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Models\\Slide.cs",
               "RelativeDocumentMoniker": "inclass\\Models\\Slide.cs",
@@ -178,37 +174,37 @@
               "RelativeToolTip": "inclass\\Models\\Slide.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T09:51:58.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T09:51:58.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "inclass\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "inclass\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAANgCAAAAAAAAAAAswOkCAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-07T15:31:05.704Z"
+              "WhenOpened": "2025-11-07T15:31:05.704Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "inclass\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Controllers\\HomeController.cs",
               "RelativeToolTip": "inclass\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCsAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T15:29:09.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\academy\\HW\\hw1-mvc\\inclass\\inclass\\Program.cs",
               "RelativeDocumentMoniker": "inclass\\Program.cs",

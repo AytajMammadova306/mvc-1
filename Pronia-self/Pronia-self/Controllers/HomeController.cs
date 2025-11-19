@@ -17,8 +17,15 @@ namespace Pronia_self.Controllers
         {
             HomeVM homeVM = new HomeVM
             {
-                Slides = _context.Slides.OrderBy(s => s.Order).Take(3).ToList(),
-                Products = _context.Products.Include(p => p.ProductImages).ToList()
+                Slides = _context.Slides
+                .OrderBy(s => s.Order)
+                .Take(3)
+                .ToList(),
+                Products = _context.Products
+                .OrderBy(p=>p.CreatedAt)
+                .Take(8)
+                .Include(p => p.ProductImages.Where(pi=>pi.IsPrimary!=null))
+                .ToList()
             };
 
 

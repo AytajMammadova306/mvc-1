@@ -157,8 +157,11 @@ wwwroot\assets\images\website-images\2.png
 wwwroot\assets\images\website-images\3.png
 wwwroot\assets\images\website-images\car.png
 wwwroot\assets\images\website-images\card.png
+wwwroot\assets\images\website-images\daisy.jpeg
 wwwroot\assets\images\website-images\dark.png
+wwwroot\assets\images\website-images\narcissus.jpeg
 wwwroot\assets\images\website-images\quotation.png
+wwwroot\assets\images\website-images\rose.jpeg
 wwwroot\assets\images\website-images\service.png
 wwwroot\assets\js\main.js
 wwwroot\assets\js\plugins.min.js

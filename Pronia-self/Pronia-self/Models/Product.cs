@@ -7,8 +7,10 @@
         public string SKU { get; set; }
         public string Description { get; set; }
         //Relational
+
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+
         public List<ProductImage> ProductImages { get; set; }
     }
 }

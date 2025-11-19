@@ -18,7 +18,7 @@ namespace Pronia_self
 
             app.MapControllerRoute(
                 "defualt",
-                "{controller=home}/{action=index}");
+                "{controller=home}/{action=index}/{id?}");
 
             app.Run();
         }

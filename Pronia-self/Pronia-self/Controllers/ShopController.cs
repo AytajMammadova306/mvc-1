@@ -17,7 +17,7 @@ namespace Pronia_self.Controllers
         {
             return View();
         }
-        public IActionResult Details(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || id < 1)
             {
@@ -25,19 +25,19 @@ namespace Pronia_self.Controllers
             }
 
 
-            Product product = _context.Products
+            Product? product =await _context.Products
                 .Include(p=>p.ProductImages.OrderByDescending(pi=>pi.IsPrimary))
                 .Include(p=>p.Category)
-                .FirstOrDefault(p => p.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            List<Product> relatedProducts=_context.Products
+            List<Product> relatedProducts=await _context.Products
                 .Where(p=>p.Category==product.Category&&p.Id!=product.Id)
                 .Include(p=>p.ProductImages.Where(pi=>pi.IsPrimary!=null))
-                .ToList();
+                .ToListAsync();
 
             DetailsVM detailsVM = new DetailsVM
             {

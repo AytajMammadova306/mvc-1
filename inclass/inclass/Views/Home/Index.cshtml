@@ -711,7 +711,7 @@ Home Slider Tab
                                             @product.Name
                                         </a>
                                         <h3>
-                                            <a href="product-details.html">
+                                            <a asp-controller="shop" asp-action="details" asp-route="@product.Id">
                                                 @product.Description
                                             </a>
                                         </h3>
@@ -720,7 +720,7 @@ Home Slider Tab
                                         <div class="card-image">
                                             <img src="~/assets/image/products/@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==true).Image." alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a asp-controller="shop" asp-action="details" asp-route="@product.Id" class="hover-image">
                                                     <img src="~/assets/image/products/@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==false).Image" alt="">
                                                 </a>
                                                 <div class="hover-btns">
@@ -1645,7 +1645,7 @@ Deal of the day
 Best Seller Product
 ===================================== -->
 <section class="section-margin bg-image section-padding-top section-padding"
-         data-bg="image/bg-images/best-seller-bg.jpg">
+         data-bg="~/assets/image/bg-images/best-seller-bg.jpg">
     <div class="container">
         <div class="section-title section-title--bordered mb-0">
             <h2>Best BEST SELLER BOOKS</h2>
@@ -1994,7 +1994,7 @@ Promotion Section Two
             <div class="col-lg-8 mb--30">
                 <div class="promo-wrapper promo-type-one">
                     <a href="#" class="promo-image  promo-overlay bg-image"
-                       data-bg="image/bg-images/promo-banner-mid.jpg">
+                       data-bg="~/assets/image/bg-images/promo-banner-mid.jpg">
                         <!-- <img src="~/assets/image/bg-images/promo-banner-mid.jpg" alt=""> -->
                     </a>
                     <div class="promo-text">
@@ -2009,7 +2009,7 @@ Promotion Section Two
             <div class="col-lg-4 mb--30">
                 <div class="promo-wrapper promo-type-two ">
                     <a href="#" class="promo-image promo-overlay bg-image"
-                       data-bg="image/bg-images/promo-banner-small.jpg">
+                       data-bg="~/assets/image/bg-images/promo-banner-small.jpg">
                         <!-- <img src="~/assets/image/bg-images/promo-banner-small.jpg" alt=""> -->
                     </a>
                     <div class="promo-text">
@@ -2347,7 +2347,7 @@ ARTS & PHOTOGRAPHY BOOKS
 ===================================== -->
 <section class="section-margin">
     <div class="promo-wrapper promo-type-three">
-        <a href="#" class="promo-image promo-overlay bg-image" data-bg="image/bg-images/promo-banner-full.jpg">
+        <a href="#" class="promo-image promo-overlay bg-image" data-bg="~/assets/image/bg-images/promo-banner-full.jpg">
         </a>
         <div class="promo-text w-100 ml-0">
             <div class="container">

@@ -18,6 +18,10 @@ namespace Pronia_self
 
             app.MapControllerRoute(
                 "defualt",
+                "{area:exists}/{controller=home}/{action=index}/{id?}");
+
+            app.MapControllerRoute(
+                "defualt",
                 "{controller=home}/{action=index}/{id?}");
 
             app.Run();

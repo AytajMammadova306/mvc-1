@@ -13,23 +13,23 @@ namespace Pronia_self.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             HomeVM homeVM = new HomeVM
             {
-                Slides = _context.Slides
+                Slides =await _context.Slides
                 .OrderBy(s => s.Order)
                 .Take(3)
-                .ToList(),
-                Products = _context.Products
+                .ToListAsync(),
+                Products = await _context.Products
                 .OrderBy(p=>p.CreatedAt)
                 .Take(8)
                 .Include(p => p.ProductImages.Where(pi=>pi.IsPrimary!=null))
-                .ToList()
+                .ToListAsync()
             };
-
-
             return View(homeVM);
+
+
             //List<Slide> slides = new List<Slide>
             //{
             //    new Slide
@@ -65,6 +65,7 @@ namespace Pronia_self.Controllers
             //};
             //_context.Slides.AddRange(slides);
             //_context.SaveChanges();
+
 
         }
 

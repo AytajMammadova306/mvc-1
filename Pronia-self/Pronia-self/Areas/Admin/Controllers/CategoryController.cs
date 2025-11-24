@@ -18,5 +18,48 @@ namespace Pronia_self.Areas.Admin.Controllers
             List<Category> categories = await _context.Categories.ToListAsync();
             return View(categories);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Category category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+
+            bool result = await _context.Categories.AnyAsync(c=>c.Name==category.Name);
+            if (result)
+            {
+                ModelState.AddModelError(nameof(Category.Name), $"{category.Name} Category already exists");
+                return View();
+            }
+
+
+            category.CreatedAt = DateTime.Now;
+
+            _context.Add(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Update(int? id)
+        {
+            if (id is null || id < 1)
+            {
+                return BadRequest();
+            }
+            Category existed = _context.Categories.FirstOrDefault(s => s.Id == id);
+            if (existed is null)
+            {
+                return NotFound();
+            }
+
+            return View(existed);
+        }
     }
 }

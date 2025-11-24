@@ -1,0 +1,39 @@
+﻿@model Slide
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Slide</h4>
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Title">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Subtitle">Subtitle</label>
+                        <input asp-for="Subtitle" class="form-control" placeholder="Subtitle">
+                        <span asp-validation-for="Subtitle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Order">Order</label>
+                        <input asp-for="Order" class="form-control" placeholder="Order">
+                        <span asp-validation-for="Order" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image">Image</label>
+                        <input asp-for="Image" class="form-control" placeholder="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Describtion">Description</label>
+                        <textarea asp-for="Describtion" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="Describtion" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

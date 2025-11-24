@@ -1,7 +1,11 @@
-﻿namespace Pronia_self.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Pronia_self.Models
 {
     public class Slide:BaseEntity
     {
+        [MaxLength(50,ErrorMessage ="50 den cox charakter olmaz")]
+        [MinLength(2)]
         public string Title { get; set; }
         public string Subtitle { get; set; }
         public string Describtion { get; set; }

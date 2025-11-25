@@ -241,7 +241,6 @@ wwwroot\assets\images\website-images\car.png
 wwwroot\assets\images\website-images\card.png
 wwwroot\assets\images\website-images\daisy.jpeg
 wwwroot\assets\images\website-images\dark.png
-wwwroot\assets\images\website-images\narcissus.jpeg
 wwwroot\assets\images\website-images\quotation.png
 wwwroot\assets\images\website-images\rose.jpeg
 wwwroot\assets\images\website-images\service.png
@@ -293,3 +292,5 @@ wwwroot\assets\scss\_slider.scss
 wwwroot\assets\scss\_testimonial.scss
 wwwroot\assets\scss\_variables.scss
 wwwroot\assets\scss\_wishlist.scss
+wwwroot\narcissus.jpeg
+wwwroot\assets\images\website-images\narcissus.jpeg

@@ -69,7 +69,6 @@ namespace Pronia_self.Areas.Admin.Controllers
                 Subtitle = slideVM.Subtitle,
                 Order = slideVM.Order,
                 Describtion = slideVM.Describtion,
-                Photo = slideVM.Photo,
                 Image = filename,
                 CreatedAt = DateTime.Now,
                 IsDeleted = false

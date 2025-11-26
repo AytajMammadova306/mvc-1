@@ -115,7 +115,7 @@ namespace Pronia_self.Areas.Admin.Controllers
             {
                 return View(slideVM);
             }
-            if(slideVM is not null)
+            if(slideVM.Photo is not null)
             {
                 if (!slideVM.Photo.ValidateType("image/"))
                 {
@@ -142,7 +142,7 @@ namespace Pronia_self.Areas.Admin.Controllers
                 return NotFound();  
             }
 
-            if(slideVM is not null)
+            if(slideVM.Photo is not null)
             {
                 string fileName =await slideVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "images", "website-images");
                 existed.Image.DeleteFile(_env.WebRootPath, "assets", "images", "website-images");

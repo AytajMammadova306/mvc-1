@@ -24,8 +24,19 @@ namespace Pronia_self.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Slide> slides = await _context.Slides.AsNoTracking().ToListAsync();
-            return View(slides);
+            List<GetSlideVM> slideVMs = await _context.Slides
+                .AsNoTracking()
+                .Select(s=>new GetSlideVM 
+                {
+                    Title = s.Title,
+                    Order = s.Order,
+                    Id = s.Id,
+                    Image = s.Image,
+                })
+                .ToListAsync();
+
+
+            return View(slideVMs);
         }
 
         public IActionResult Create()
@@ -68,7 +79,7 @@ namespace Pronia_self.Areas.Admin.Controllers
                 Title = slideVM.Title,
                 Subtitle = slideVM.Subtitle,
                 Order = slideVM.Order,
-                Describtion = slideVM.Describtion,
+                Description = slideVM.Description,
                 Image = filename,
                 CreatedAt = DateTime.Now,
                 IsDeleted = false
@@ -101,7 +112,7 @@ namespace Pronia_self.Areas.Admin.Controllers
                 Title = existed.Title,
                 Subtitle = existed.Subtitle,
                 Order = existed.Order,
-                Describtion = existed.Describtion,
+                Description = existed.Description,
                 Image = existed.Image
             };
 
@@ -150,7 +161,7 @@ namespace Pronia_self.Areas.Admin.Controllers
             }
 
             existed.Order = slideVM.Order;
-            existed.Describtion = slideVM.Describtion;
+            existed.Description = slideVM.Description;
             existed.Subtitle = slideVM.Subtitle;
             existed.Title = slideVM.Title;
             _context.SaveChangesAsync();

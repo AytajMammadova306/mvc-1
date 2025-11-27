@@ -9,7 +9,7 @@ namespace Pronia_self.Models
         [MinLength(2)]
         public string Title { get; set; }
         public string Subtitle { get; set; }
-        public string Describtion { get; set; }
+        public string Description { get; set; }
         public string Image { get; set; }
         public int Order { get; set; }
     }

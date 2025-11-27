@@ -296,5 +296,4 @@ wwwroot\admin\vendors\mdi\fonts\materialdesignicons-webfont.woff2
 wwwroot\narcissus.jpeg
 wwwroot\assets\images\website-images\87cf1922-0817-4380-874d-711436db3fea.jpg
 wwwroot\assets\images\website-images\d0609b05-5b0a-4d20-9a52-bd06d522b05f.jpg
-wwwroot\assets\images\website-images\47b33208-56e8-463c-a546-3e01de5b8d09.png
 wwwroot\assets\images\website-images\93e2576a-d31f-418b-bf4d-adb8543ac13a.jpg

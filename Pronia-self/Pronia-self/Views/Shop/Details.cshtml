@@ -188,9 +188,29 @@
                         <div class="product-category product-tags">
                             <span class="title">Tags :</span>
                             <ul>
-                                <li>
-                                    <a href="#">Furniture</a>
-                                </li>
+                                @if (Model.Product.ProductTags.Count > 0)
+                                {
+                                    @foreach (ProductTag pTag in Model.Product.ProductTags)
+                                    {
+                                        if (Model.Product.ProductTags.LastIndexOf(pTag) != Model.Product.ProductTags.Count()-1)
+                                        {
+                                            <li>
+                                                <a href="#">@pTag.Tag.Name,</a>
+                                            </li>
+                                            continue;
+                                        }
+                                        <li>
+                                            <a href="#">@pTag.Tag.Name</a>
+                                        </li>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="#">No Tag</a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                         <div class="product-category social-link align-items-center pb-0">
@@ -460,7 +480,7 @@
                             {
                                 <div class="swiper-slide product-item">
                                     <div class="product-img">
-                                        <a href="single-product-variable.html">
+                                        <a asp-controller="shop" asp-action="details" asp-route-id="@product.Id">
                                             <img class="primary-img"
                                                  src="~/assets/images/website-images/@product.ProductImages.FirstOrDefault(pi=>pi.IsPrimary==true)?.Image"
                                                  alt="Product Images" />
@@ -510,7 +530,7 @@
                                     </div>
                                     <div class="product-content">
                                         <a class="product-name"
-                                           asp-action="details" asp-route-id="@product.Id">@product.Name</a>
+                                           asp-controller="shop" asp-action="details" asp-route-id="@product.Id">@product.Name</a>
                                         <div class="price-box pb-1">
                                             <span class="new-price">$@product.Price</span>
                                         </div>

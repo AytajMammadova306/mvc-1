@@ -6,6 +6,21 @@
                 <h4 class="card-title">Create Product</h4>
                 <form class="forms-sample" method="post" enctype="multipart/form-data">
                     <div class="form-group">
+                        <label asp-for="PrimaryImage">Primary Image</label>
+                        <input asp-for="PrimaryImage" class="form-control" placeholder="PrimaryImage">
+                        <span asp-validation-for="PrimaryImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SecondaryImage">Secondary Image</label>
+                        <input asp-for="SecondaryImage" class="form-control" placeholder="SecondaryImage">
+                        <span asp-validation-for="SecondaryImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AdditionalPhotos">Additional Photos</label>
+                        <input asp-for="AdditionalPhotos" class="form-control" placeholder="Additional Photos">
+                        <span asp-validation-for="AdditionalPhotos" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
                         <label asp-for="Name">Name</label>
                         <input asp-for="Name" class="form-control" placeholder="Name">
                         <span asp-validation-for="Name" class="text-danger"></span>
@@ -24,11 +39,6 @@
                         <label asp-for="CategoryId">Category</label>
                         <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(Model.Categories,nameof(Category.Id),nameof(Category.Name)))">
                             <option value="" disabled selected>Choose Category</option>
-
-                          @*   @foreach(Category category in Model.Categories)
-                            {
-                                <option value="@category.Id">@category.Name</option>
-                            } *@
                         </select>
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>
@@ -37,6 +47,18 @@
                         <select asp-for="TagIds" class="form-control" asp-items="@(new SelectList(Model.Tags, nameof(Tag.Id), nameof(Tag.Name)))">
                         </select>
                         <span asp-validation-for="TagIds" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ColorIds">Colors</label>
+                        <select asp-for="ColorIds" class="form-control" asp-items="@(new SelectList(Model.Colors, nameof(Color.Id), nameof(Color.Name)))">
+                        </select>
+                        <span asp-validation-for="ColorIds" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SizeIds">Sizes</label>
+                        <select asp-for="SizeIds" class="form-control" asp-items="@(new SelectList(Model.Sizes, nameof(Size.Id), nameof(Size.Name)))">
+                        </select>
+                        <span asp-validation-for="SizeIds" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Description">Description</label>

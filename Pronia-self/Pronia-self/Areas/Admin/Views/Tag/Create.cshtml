@@ -1,0 +1,19 @@
+﻿@model CreateTagVM
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Tag</h4>
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="TagName">Tag Name</label>
+                        <input asp-for="TagName" class="form-control" placeholder="Tag Name">
+                        <span asp-validation-for="TagName" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

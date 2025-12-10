@@ -1,0 +1,57 @@
+﻿@model GetDetailsVM
+@{
+    string colors = string.Empty;
+}
+@foreach(ProductImage PI in Model.ProductImages)
+{
+    <img style="width:150px;height:150px;" src="~/assets/images/website-images/@PI.Image" class="card-img-top" alt="@PI.Product.Name">
+}
+<div class="card-body">
+    <h5 class="card-title">@Model.Name</h5>
+    <p class="card-text">@Model.Description</p>
+</div>
+<ul class="list-group list-group-flush w-50">
+    <li class="list-group-item">@Model.Price</li>
+    <li class="list-group-item"><span class="w-25">Color:</span><span class="w-25">
+                @for(int i = 0; i < Model.Colors.Count(); i++)
+                {
+                    if (i !=Model.Colors.Count()-1)
+                    {
+                        colors += $"{Model.Colors[i]} ,";
+                    }
+                else
+                {
+                    colors += Model.Colors[i];
+                }
+                }
+                @colors
+        </span></li>
+    <li class="list-group-item">
+        <span class="w-25">Tags:</span><span class="w-25">
+            @if (Model.Tags.Count() != 0)
+            {
+                @for (int i = 0; i < Model.Tags.Count(); i++)
+                {
+                    if (i != Model.Tags.Count() - 1)
+                    {
+                        colors += $"{Model.Tags[i]} ,";
+                    }
+                    else
+                    {
+                        colors += Model.Tags[i];
+                    }
+                }
+            }
+            else
+            {
+                colors += "No Tags";
+            }
+            @colors
+        </span>
+    </li>
+    <li class="list-group-item">A second item</li>
+</ul>
+<div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+</div>

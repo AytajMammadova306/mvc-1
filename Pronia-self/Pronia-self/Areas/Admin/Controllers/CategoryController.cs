@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pronia_self.DAL;
 using Pronia_self.Models;
+using Pronia_self.ViewModels;
 
 namespace Pronia_self.Areas.Admin.Controllers
 {
@@ -15,8 +16,14 @@ namespace Pronia_self.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Category> categories = await _context.Categories.ToListAsync();
-            return View(categories);
+            var categoryVMs = await _context.Categories
+            .Select(c=>new GetCategoryVM
+            {
+                Name = c.Name,
+                Id = c.Id,
+                ProductCount= _context.Products.Where(p=>p.CategoryId == c.Id).Count(),
+            }).ToListAsync();
+            return View(categoryVMs);
         }
 
         public IActionResult Create()
@@ -25,41 +32,73 @@ namespace Pronia_self.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Category category)
+        public async Task<IActionResult> Create(CreateCategoryVM categoryVM)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
-
-
-            bool result = await _context.Categories.AnyAsync(c=>c.Name==category.Name);
+            if (categoryVM.Name.Length == 0)
+            {
+                ModelState.AddModelError(nameof(UpdateCategoryVM), "Category Name should be at least one character");
+            }
+            bool result = await _context.Categories.AnyAsync(c=>c.Name== categoryVM.Name);
             if (result)
             {
-                ModelState.AddModelError(nameof(Category.Name), $"{category.Name} Category already exists");
+                ModelState.AddModelError(nameof(CreateCategoryVM.Name), $"{categoryVM.Name} Category already exists");
                 return View();
             }
-
-
-            category.CreatedAt = DateTime.Now;
-
-            _context.Add(category);
+            _context.Add(new Category
+            {
+                Name = categoryVM.Name,
+                CreatedAt = DateTime.Now,
+                IsDeleted=false,
+            });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        public IActionResult Update(int? id)
+        public async Task<IActionResult> Update(int? id)
         {
             if (id is null || id < 1)
             {
                 return BadRequest();
             }
-            Category existed = _context.Categories.FirstOrDefault(s => s.Id == id);
+            Category existed =await _context.Categories.FirstOrDefaultAsync(s => s.Id == id);
             if (existed is null)
             {
                 return NotFound();
             }
-
-            return View(existed);
+            UpdateCategoryVM categoryVM = new UpdateCategoryVM
+            {
+                Name= existed.Name,
+            };
+            return View(categoryVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(int? id, UpdateCategoryVM categoryVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(categoryVM);
+            }
+            if (categoryVM.Name.Length == 0)
+            {
+                ModelState.AddModelError(nameof(UpdateCategoryVM), "Category Name should be at least one character");
+            }
+            bool result = await _context.Categories.AnyAsync(c => c.Name == categoryVM.Name&&c.Id!=id);
+            if (result)
+            {
+                ModelState.AddModelError(nameof(UpdateCategoryVM.Name), $"{categoryVM.Name} Category already exists");
+                return View();
+            }
+            Category? existed = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
+            if (existed is null)
+            {
+                return NotFound();
+            }
+            existed.Name= categoryVM.Name;
+            _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

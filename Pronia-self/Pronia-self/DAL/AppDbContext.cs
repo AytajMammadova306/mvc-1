@@ -15,11 +15,17 @@ namespace Pronia_self.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags{ get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
-
+        public DbSet<Color> Colors { get; set; }
+        public DbSet<ProductColor> ProductColors { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<ProductSize> ProdcutSizes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ProductTag>().HasKey(pt => new { pt.ProductId, pt.TagId });
+            modelBuilder.Entity<ProductColor>().HasKey(pc => new { pc.ProductId, pc.ColorId });
+            modelBuilder.Entity<ProductSize>().HasKey(ps => new { ps.ProductId, ps.SizeId });
+
         }
 
     }

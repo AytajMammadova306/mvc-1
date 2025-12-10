@@ -1,4 +1,4 @@
-﻿@model List<Category>
+﻿@model List<GetCategoryVM>
 @{
     int count = 0;
 }
@@ -8,11 +8,8 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Categories</h4>
-                <p class="card-description">
-                    Add class <code>.table-striped</code>
-                </p>
                 <div class="table-responsive">
-                    <a class="btn btn-success">Create Slide</a>
+                    <a class="btn btn-success" asp-action="Create">Create Category</a>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -32,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Category category in Model)
+                            @foreach (GetCategoryVM categoryVM in Model)
                             {
                                 count++;
                                 <tr>
@@ -40,16 +37,16 @@
                                         @count
                                     </td>
                                     <td>
-                                        @category.Name
+                                        @categoryVM.Name
                                     </td>
                                     <td>
-                                        @category.Products.Count()
+                                        @categoryVM.ProductCount
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger">
+                                        <a asp-action="delete" asp-route-id="@categoryVM.Id" class="btn btn-danger">
                                             <i class="mdi mdi-delete"></i>
                                         </a>
-                                        <a asp-action="update" asp-route-id="@category.Id" class="btn btn-warning">
+                                        <a asp-action="update" asp-route-id="@categoryVM.Id" class="btn btn-warning">
                                             <i class="mdi mdi-pencil"></i>
                                         </a>
                                         <a class="btn btn-primary">

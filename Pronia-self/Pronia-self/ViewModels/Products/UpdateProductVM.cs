@@ -12,6 +12,8 @@ namespace Pronia_self.ViewModels
         public string Description { get; set; }
         public IFormFile? PrimaryImage { get; set; }
         public IFormFile? SecondaryImage { get; set; }
+        public List<IFormFile>? AdditionalPhotos { get; set; }
+
         [Required]
         public int? CategoryId { get; set; }
         public List<Category>? Categories { get; set; }
@@ -21,6 +23,7 @@ namespace Pronia_self.ViewModels
         public List<int> ColorIds { get; set; }
         public List<int> SizeIds { get; set; }
         public List<int>? TagIds { get; set; }
+        public List<int> ImageIds { get; set; }
         public List<ProductImage>? ProductImages { get; set; }
     }
 }

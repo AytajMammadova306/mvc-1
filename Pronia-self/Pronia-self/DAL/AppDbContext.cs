@@ -20,12 +20,15 @@ namespace Pronia_self.DAL
         public DbSet<ProductColor> ProductColors { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<ProductSize> ProdcutSizes { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ProductTag>().HasKey(pt => new { pt.ProductId, pt.TagId });
             modelBuilder.Entity<ProductColor>().HasKey(pc => new { pc.ProductId, pc.ColorId });
             modelBuilder.Entity<ProductSize>().HasKey(ps => new { ps.ProductId, ps.SizeId });
+            modelBuilder.Entity<Setting>().HasKey(s =>s.Key);
 
         }
 

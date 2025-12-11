@@ -10,7 +10,7 @@ using Pronia_self.ViewModels;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin,Moderator")]
 
     public class ProductController : Controller
     {
@@ -181,6 +181,7 @@ namespace Pronia_self.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Update(int? id)
         {
             if (id is null || id < 1)
@@ -376,6 +377,8 @@ namespace Pronia_self.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete (int? id)
         {
             if(id is null || id <1)

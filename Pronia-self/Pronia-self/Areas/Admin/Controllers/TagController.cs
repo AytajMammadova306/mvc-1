@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin,Moderator")]
 
     public class TagController : Controller
     {
@@ -55,6 +55,8 @@ namespace Pronia_self.Areas.Admin.Controllers
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Update(int? id)
         {
             if (id is null || id < 1)

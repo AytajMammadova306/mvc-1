@@ -8,7 +8,7 @@ using Pronia_self.ViewModels;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles ="Admin,Moderator")]
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;
@@ -59,6 +59,8 @@ namespace Pronia_self.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Update(int? id)
         {
             if (id is null || id < 1)

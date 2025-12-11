@@ -6,6 +6,8 @@ namespace Pronia_self.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+        //relational
+        public List<BasketItem> BasketItems { get; set; }
 
     }
 }

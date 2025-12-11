@@ -69,6 +69,19 @@ namespace Pronia_self.Controllers
 
         }
 
+        //public IActionResult Test()
+        //{
+        //    HttpContext.Response.Cookies.Append("Name","AYtaj",new CookieOptions
+        //    {
+        //        MaxAge=TimeSpan.FromSeconds(7)
+        //    });
+        //    return Content("OK");
+        //}
+        //public IActionResult GetCookie()
+        //{
+        //    return Content(HttpContext.Request.Cookies["Name"]);
+        //}
+
 
     }
 }

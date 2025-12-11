@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using Pronia_self.Services.Implementations
+@using Pronia_self.Services.Interfaces
+@inject ILayoutService layoutService;
+
+@{
+    Dictionary<string, string> settings = await layoutService.GetSettingAsync();
+    BasketVM basketVM = await layoutService.GetBasketVMAsync();
+}
+
+<!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8" />
@@ -97,11 +106,11 @@
                             <div class="header-middle-wrap position-relative">
                                 <div class="header-contact d-none d-lg-flex">
                                     <i class="pe-7s-call"></i>
-                                    <a href="tel://+00-123-456-789">+00 123 456 789</a>
+                                    <a href="tel://@settings["tel"]">@settings["tel"]</a>
                                 </div>
 
                                 <a href="index.html" class="header-logo">
-                                    <img src="~/assets/images/logo/dark.png" alt="Header Logo" />
+                                    <img src="~/assets/images/logo/@settings["logo"]" alt="Header Logo" />
                                 </a>
 
                                 <div class="header-right">
@@ -111,7 +120,7 @@
                                                class="search-btn bt"
                                                data-bs-toggle="modal"
                                                data-bs-target="#exampleModal">
-                                                <i class="pe-7s-search"></i>
+                                                @Html.Raw(settings["searchicon"])
                                             </a>
                                         </li>
                                         <li class="dropdown d-none d-lg-block">
@@ -303,7 +312,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-3 col-6">
                                 <a href="index.html" class="header-logo">
-                                    <img src="~/assets/images/logo/dark.png" alt="Header Logo" />
+                                    <img src="~/assets/images/logo/@settings["logo"]" alt="Header Logo" />
                                 </a>
                             </div>
                             <div class="col-lg-6 d-none d-lg-block">
@@ -435,7 +444,7 @@
                                                class="search-btn bt"
                                                data-bs-toggle="modal"
                                                data-bs-target="#exampleModal">
-                                                <i class="pe-7s-search"></i>
+                                                @Html.Raw(settings["searchicon"])
                                             </a>
                                         </li>
                                         <li class="dropdown d-none d-lg-block">
@@ -477,7 +486,10 @@
                                         <li class="minicart-wrap me-3 me-lg-0">
                                             <a href="#miniCart" class="minicart-btn toolbar-btn">
                                                 <i class="pe-7s-shopbag"></i>
-                                                <span class="quantity">3</span>
+                                                @if (basketVM.BasketItemVMs.Count > 1)
+                                                {
+                                                    <span class="quantity">@basketVM.BasketItemVMs.Count()</span>
+                                                }
                                             </a>
                                         </li>
                                         <li class="mobile-menu_wrap d-block d-lg-none">
@@ -501,7 +513,7 @@
                         </div>
                         <div class="header-contact offcanvas-contact">
                             <i class="pe-7s-call"></i>
-                            <a href="tel://+00-123-456-789">+00 123 456 789</a>
+                            <a href="tel://@settings["tel"]">@settings["tel"]</a>
                         </div>
                         <div class="offcanvas-user-info">
                             <ul class="dropdown-wrap">
@@ -838,80 +850,39 @@
                             </a>
                         </div>
                         <ul class="minicart-list">
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="#">
-                                    <i class="pe-7s-close"
-                                       data-tippy="Remove"
-                                       data-tippy-inertia="true"
-                                       data-tippy-animation="shift-away"
-                                       data-tippy-delay="50"
-                                       data-tippy-arrow="true"
-                                       data-tippy-theme="sharpborder"></i>
-                                </a>
-                                <a href="single-product-variable.html"
-                                   class="product-item_img">
-                                    <img class="img-full"
-                                         src="~/assets/images/product/small-size/2-1-70x78.png"
-                                         alt="Product Image" />
-                                </a>
-                                <div class="product-item_content">
-                                    <a class="product-item_title"
-                                       href="single-product-variable.html">American Marigold</a>
-                                    <span class="product-item_quantity">1 x $23.45</span>
-                                </div>
-                            </li>
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="#">
-                                    <i class="pe-7s-close"
-                                       data-tippy="Remove"
-                                       data-tippy-inertia="true"
-                                       data-tippy-animation="shift-away"
-                                       data-tippy-delay="50"
-                                       data-tippy-arrow="true"
-                                       data-tippy-theme="sharpborder"></i>
-                                </a>
-                                <a href="single-product-variable.html"
-                                   class="product-item_img">
-                                    <img class="img-full"
-                                         src="~/assets/images/product/small-size/2-2-70x78.png"
-                                         alt="Product Image" />
-                                </a>
-                                <div class="product-item_content">
-                                    <a class="product-item_title"
-                                       href="single-product-variable.html">Black Eyed Susan</a>
-                                    <span class="product-item_quantity">1 x $25.45</span>
-                                </div>
-                            </li>
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="#">
-                                    <i class="pe-7s-close"
-                                       data-tippy="Remove"
-                                       data-tippy-inertia="true"
-                                       data-tippy-animation="shift-away"
-                                       data-tippy-delay="50"
-                                       data-tippy-arrow="true"
-                                       data-tippy-theme="sharpborder"></i>
-                                </a>
-                                <a href="single-product-variable.html"
-                                   class="product-item_img">
-                                    <img class="img-full"
-                                         src="~/assets/images/product/small-size/2-3-70x78.png"
-                                         alt="Product Image" />
-                                </a>
-                                <div class="product-item_content">
-                                    <a class="product-item_title"
-                                       href="single-product-variable.html">Bleeding Heart</a>
-                                    <span class="product-item_quantity">1 x $30.45</span>
-                                </div>
-                            </li>
+                            @foreach(BasketItemVM itemVM in basketVM.BasketItemVMs)
+                            {
+                                <li class="minicart-product">
+                                    <a class="product-item_remove" href="#">
+                                        <i class="pe-7s-close"
+                                           data-tippy="Remove"
+                                           data-tippy-inertia="true"
+                                           data-tippy-animation="shift-away"
+                                           data-tippy-delay="50"
+                                           data-tippy-arrow="true"
+                                           data-tippy-theme="sharpborder"></i>
+                                    </a>
+                                    <a href="single-product-variable.html"
+                                       class="product-item_img">
+                                        <img class="img-full"
+                                             src="~/assets/images/website-images/@itemVM.Image"
+                                             alt="Product Image" />
+                                    </a>
+                                    <div class="product-item_content">
+                                        <a class="product-item_title"
+                                           href="single-product-variable.html">@itemVM.Name</a>
+                                        <span class="product-item_quantity">@itemVM.Count x $@itemVM.Price ->@itemVM.SubTotal</span>
+                                    </div>
+                                </li>
+                            }
                         </ul>
                     </div>
                     <div class="minicart-item_total">
                         <span>Subtotal</span>
-                        <span class="ammount">$79.35</span>
+                        <span class="ammount">$@basketVM.Total</span>
                     </div>
                     <div class="group-btn_wrap d-grid gap-2">
-                        <a href="cart.html" class="btn btn-dark">View Cart</a>
+                        <a asp-controller="basket" asp-action="index" class="btn btn-dark">View Cart</a>
                         <a href="checkout.html" class="btn btn-dark">Checkout</a>
                     </div>
                 </div>
@@ -944,7 +915,7 @@
                                 <div class="social-link with-border">
                                     <ul>
                                         <li>
-                                            <a href="#"
+                                            <a href="@settings["fblink"]"
                                                data-tippy="Facebook"
                                                data-tippy-inertia="true"
                                                data-tippy-animation="shift-away"
@@ -1060,10 +1031,10 @@
                         <div class="col-lg-3 pt-40">
                             <div class="footer-contact-info">
                                 <h3 class="footer-widget-title">Got Question? Call Us</h3>
-                                <a class="number" href="tel://123-456-789">123 456 789</a>
+                                <a class="number" href="tel://@settings["tel"]">@settings["tel"]</a>
                                 <div class="address">
                                     <ul>
-                                        <li>Your Address Goes Here</li>
+                                        <li>@settings["address"]</li>
                                     </ul>
                                 </div>
                             </div>

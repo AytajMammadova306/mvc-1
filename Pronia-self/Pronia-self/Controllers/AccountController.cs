@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia_self.DAL;
 using Pronia_self.Models;
+using Pronia_self.Utilities.Enums;
 using Pronia_self.ViewModels;
 
 namespace Pronia_self.Controllers
@@ -11,11 +12,16 @@ namespace Pronia_self.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController(
+            UserManager<AppUser> userManager, 
+            SignInManager<AppUser> signInManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager=userManager;
             _signInManager=signInManager;
+            _roleManager=roleManager;
         }
         public IActionResult Register()
         {
@@ -45,6 +51,7 @@ namespace Pronia_self.Controllers
                 }
                 return View();
             }
+            await _userManager.AddToRoleAsync(user, UserRole.Member.ToString());
 
             await _signInManager.SignInAsync(user, isPersistent: false);
             if (returnUrl is not null)
@@ -55,7 +62,11 @@ namespace Pronia_self.Controllers
             return RedirectToAction("Index", "Home");
 
         }
-
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+        [HttpPost]
         public async Task<IActionResult> Login(LoginVM userVM,string? returnUrl)
         {
             if (!ModelState.IsValid)
@@ -83,7 +94,8 @@ namespace Pronia_self.Controllers
                 ModelState.AddModelError(string.Empty, "Username, Email or Password is incorrect");
                 return View();
             }
-            if(returnUrl is not null)
+            Response.Cookies.Delete("Basket");
+            if (returnUrl is not null)
             {
                 return (Redirect(returnUrl));
             }
@@ -101,6 +113,24 @@ namespace Pronia_self.Controllers
 
             return RedirectToAction("Index", "Home");
 
+        }
+
+        public async Task<IActionResult> CreateRoles()
+        {
+            
+            foreach(UserRole role in Enum.GetValues(typeof(UserRole))){
+                if(!await _roleManager.RoleExistsAsync(role.ToString()))
+                {
+                    IdentityRole identityRole = new()
+                    {
+                        Name = role.ToString()
+                    };
+                    await _roleManager.CreateAsync(identityRole);
+                }
+                
+
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

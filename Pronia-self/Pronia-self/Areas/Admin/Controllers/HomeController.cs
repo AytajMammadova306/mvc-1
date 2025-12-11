@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin,Moderator")]
 
     public class HomeController : Controller
     {

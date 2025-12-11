@@ -29,7 +29,7 @@
                         {
                             <div style="position:relative">
                                 <img style="width:150px;height:150px" src="~/assets/images/website-images/@productImage.Image" />
-                                <button style="position:absolute;top:5px;right:5px;" class="btn btn-danger">X</button>
+                                <button type="button" style="position:absolute;top:5px;right:5px;" class="btn btn-danger cus-delete">X</button>
                                 <input asp-for="ImageIds" type="hidden" value="@productImage.Id"/>
                             </div>
                         }
@@ -89,9 +89,20 @@
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button asp-action="Index" class="btn btn-light">Cancel</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+@section DeleteButtons{
+    <script>
+        var btns =document.querySelectorAll(".cus-delete");
+        for(let i=0;i<btns.length;i++){
+            btns[i].addEventListener("click",function(){
+                btns[i].parentElement.remove()
+            })
+        }
+    </script>
+}

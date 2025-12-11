@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
@@ -9,6 +10,8 @@ using System.Threading.Tasks;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
+
     public class TagController : Controller
     {
         private readonly AppDbContext _context;

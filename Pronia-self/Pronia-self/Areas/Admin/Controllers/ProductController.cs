@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia_self.DAL;
 using Pronia_self.Models;
@@ -9,6 +10,8 @@ using Pronia_self.ViewModels;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
+
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;
@@ -222,6 +225,8 @@ namespace Pronia_self.Areas.Admin.Controllers
                 .Include(p => p.ProductTags)
                 .FirstOrDefaultAsync(p => p.Id == id);
             productVM.Categories = await _context.Categories.ToListAsync();
+            productVM.Tags = await _context.Tags.ToListAsync();
+            productVM.ProductImages = await _context.ProductImages.ToListAsync();
             if (!ModelState.IsValid)
             {
                 return View(productVM);
@@ -304,6 +309,19 @@ namespace Pronia_self.Areas.Admin.Controllers
                 existed.ProductImages.Remove(existedSecondary);
             }
 
+            if (productVM.ImageIds is null)
+            {
+                productVM.ImageIds = new();
+            }
+            List<ProductImage> deletedImages = existed.ProductImages
+                .Where(pi => !productVM.ImageIds
+                    .Exists(imgId => pi.Id == imgId)&&pi.IsPrimary==null)
+                .ToList();
+
+            deletedImages.ForEach(di => di.Image.DeleteFile());
+            _context.ProductImages.RemoveRange(deletedImages);
+
+
             _context.ProductTags
                 .RemoveRange(existed.ProductTags
                     .Where(pt=>!productVM.TagIds
@@ -315,6 +333,38 @@ namespace Pronia_self.Areas.Admin.Controllers
                         .Exists(pt=>pt.TagId==ti))
                     .Select(tid=>new ProductTag {TagId=tid,ProductId=existed.Id})
                     .ToList());
+
+            if(productVM.AdditionalPhotos is not null)
+            {
+                string message = string.Empty;
+                if (productVM.AdditionalPhotos is not null)
+                {
+                    foreach (IFormFile file in productVM.AdditionalPhotos)
+                    {
+                        if (!file.ValidateType("image/"))
+                        {
+                            message += $"<div class=\"alert alert-warning\" role=\"alert\">\r\n {file.FileName} type is incorrect\r\n</div>";
+                            continue;
+                        }
+                        if (!file.ValidateSize(FileSize.MB, 2))
+                        {
+                            message += $"<div class=\"alert alert-warning\" role=\"alert\">\r\n {file.FileName} size is incorrect\r\n</div>";
+                            continue;
+                        }
+                        existed.ProductImages.Add(new ProductImage()
+                        {
+                            Image = await file.CreateFileAsync(_env.WebRootPath, "assets", "images", "website-images"),
+                            IsPrimary = null,
+                            CreatedAt = DateTime.Now
+                        }
+                        );
+                    }
+                }
+                TempData["ImageWarning"] = message;
+            }
+
+            
+
             existed.Name = productVM.Name;
             existed.Description = productVM.Description;
             existed.SKU = productVM.SKU;
@@ -324,6 +374,26 @@ namespace Pronia_self.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
 
 
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Delete (int? id)
+        {
+            if(id is null || id <1)
+            {
+                return BadRequest();
+            }
+            Product? product = await _context.Products
+                .Include(p=>p.ProductImages)
+                .FirstOrDefaultAsync(p => p.Id == id);
+            if(product is null)
+            {
+                return NotFound();
+            }
+            product.ProductImages
+                .ForEach(pi => pi.Image
+                    .DeleteFile(_env.WebRootPath, "assets", "images", "website-images"));
+            _context.Products.Remove(product);
+            _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

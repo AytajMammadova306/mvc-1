@@ -23,7 +23,7 @@ namespace Pronia_self.ViewModels
         public List<int> ColorIds { get; set; }
         public List<int> SizeIds { get; set; }
         public List<int>? TagIds { get; set; }
-        public List<int> ImageIds { get; set; }
+        public List<int>? ImageIds { get; set; }
         public List<ProductImage>? ProductImages { get; set; }
     }
 }

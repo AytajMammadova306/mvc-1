@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia_self.DAL;
 using Pronia_self.Models;
@@ -9,6 +10,8 @@ using System.Threading.Tasks;
 namespace Pronia_self.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
+
     public class SlideController : Controller
     {
         private readonly AppDbContext _context;

@@ -13,9 +13,40 @@ namespace Pronia_self.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index( string? search, int? categoryId)
         {
-            return View();
+            IQueryable<Product> query =_context.Products;
+            if(search is not null)
+            {
+                query = query.Where(p => p.Name.ToLower().Contains(search.ToLower().Trim()));
+            }
+            if(categoryId is not null)
+            {
+                query = query.Where(p => p.CategoryId == categoryId);
+            }
+
+            ShopVM shopVM = new()
+            {
+                ProductVMs =await query.Select(p => new GetProductVM()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    PrimaryImage = p.ProductImages.FirstOrDefault(pi => pi.IsPrimary == true).Image,
+                    SecondaryImage = p.ProductImages.FirstOrDefault(pi => pi.IsPrimary == false).Image,
+                    Price=p.Price
+                }).ToListAsync(),
+
+                CategoryVMs=await _context.Categories.Select(c=> new GetCategoryVM()
+                {
+                    Id = c.Id,
+                    Name= c.Name,
+                    ProductCount=c.Products.Count()
+                }).ToListAsync(),
+                Search=search,
+                CategoryId=categoryId
+            };
+
+            return View(shopVM);
         }
         public async Task<IActionResult> Details(int? id)
         {

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pronia_self.DAL;
 using Pronia_self.Models;
+using Pronia_self.Utilities.Enums;
 using Pronia_self.ViewModels;
 
 namespace Pronia_self.Controllers
@@ -13,8 +14,9 @@ namespace Pronia_self.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index( string? search, int? categoryId)
+        public async Task<IActionResult> Index( string? search, int? categoryId, int key=1, int page=1)
         {
+
             IQueryable<Product> query =_context.Products;
             if(search is not null)
             {
@@ -25,6 +27,26 @@ namespace Pronia_self.Controllers
                 query = query.Where(p => p.CategoryId == categoryId);
             }
 
+            switch (key)
+            {
+                case (int)SortType.Date:
+                    query = query.OrderBy(p => p.CreatedAt);
+                    break;
+                case (int)SortType.Price:
+                    query=query.OrderBy(p=>p.Price);
+                    break;
+                default:
+                    query = query.OrderBy(p => p.Name);
+                    break;
+            }
+
+            int totalCount= await query.CountAsync();
+            int totalPage =(int)Math.Ceiling((double)totalCount/2);
+            if (page < 1 || page > totalPage)
+            {
+                return BadRequest();
+            }
+            query =query.Skip((totalPage - 1) * 2).Take(2);
             ShopVM shopVM = new()
             {
                 ProductVMs =await query.Select(p => new GetProductVM()
@@ -43,7 +65,11 @@ namespace Pronia_self.Controllers
                     ProductCount=c.Products.Count()
                 }).ToListAsync(),
                 Search=search,
-                CategoryId=categoryId
+                CategoryId=categoryId,
+                Key=key,
+                TotalPage=totalPage,
+                CurrentPage=page
+                
             };
 
             return View(shopVM);
